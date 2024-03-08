@@ -496,8 +496,10 @@ type ContentToCellArray struct {
 var _ gowid.ICellProcessor = (*ContentToCellArray)(nil)
 
 func (m *ContentToCellArray) ProcessCell(cell gowid.Cell) gowid.Cell {
+	if len(m.Cells) > m.Cur {
 	m.Cells[m.Cur] = cell
 	m.Cur += runewidth.RuneWidth(cell.Rune())
+	}
 	return cell
 }
 
