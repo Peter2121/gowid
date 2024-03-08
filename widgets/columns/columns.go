@@ -437,7 +437,7 @@ func widgetWidthsExt(w gowid.ISelectChild, subs []gowid.IWidget, dims []gowid.IW
 	res := make([]int, lenw)
 	var widthHelper []bool
 	var widthHelper2 []bool
-	if w, ok := w.(IWidthHelper); ok {
+	if w, ok := w.(IWidthHelper); ok && false {
 		// Save some allocations
 		widthHelper, widthHelper2 = w.WidthHelpers()
 		defer func() {
